@@ -10,6 +10,12 @@ namespace FizzBuzz
     {
         static void Main(string[] args)
         {
+            FizzBuzzMethodTwo();
+            Console.ReadLine();
+        }
+        //One method to do FizzBuzz:
+        private static void FizzBuzzMethodOne()
+        {
             for (int i = 1; i <= 100; i++)
             {
                 if (i % 3 == 0 && i % 5 == 0)
@@ -29,7 +35,29 @@ namespace FizzBuzz
                     Console.WriteLine(i);
                 }
             }
-            Console.ReadLine();
+        }
+
+        //Second method to do FizzBuzz:
+        private static void FizzBuzzMethodTwo()
+        {
+            for (int i = 1; i <= 100; i++)
+            {
+                string output = "";
+                if (i % 3 == 0)
+                {
+                    output += "Fizz";
+                }
+                if (i % 5 == 0)
+                {
+                    output += "Buzz";
+                }
+                if (output.Length == 0)
+                {
+                    output = i.ToString();
+                }
+                Console.WriteLine(output);
+
+            }
         }
     }
 }
